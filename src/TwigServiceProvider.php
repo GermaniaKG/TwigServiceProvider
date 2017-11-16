@@ -31,7 +31,7 @@ class TwigServiceProvider implements ServiceProviderInterface
 
 
     /**
-     * @param array $config Configuration
+     * @param array $config Configuration array.
      */
     public function __construct( array $config = array())
     {
@@ -103,10 +103,11 @@ class TwigServiceProvider implements ServiceProviderInterface
             $cache_path      = $dic['Twig.CachePath'];
 
             return [
-                'cache'       => $cache_path,
-                'auto_reload' => $template_config['auto_reload'],
-                'autoescape'  => $template_config['autoescape'],
-                'debug'       => $template_config['debug']
+                'cache'            => $cache_path,
+                'auto_reload'      => $template_config['auto_reload'],
+                'autoescape'       => $template_config['autoescape'],
+                'debug'            => $template_config['debug'],
+                'strict_variables' => $template_config['strict_variables']
             ];
         };
 
