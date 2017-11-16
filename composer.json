@@ -1,6 +1,7 @@
 {
 	"name": "germania-kg/twigserviceprovider",
 	"description": "Pimple Service Provider for Twig templating engine",
+	"keywords": [ "Pimple", "Twig", "service provider", "serviceprovider", "depedency injection" ],
 
 	"license": "MIT",
 
