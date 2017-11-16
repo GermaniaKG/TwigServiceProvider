@@ -87,8 +87,7 @@ class TwigServiceProvider implements ServiceProviderInterface
             $templates_paths = $dic['Twig.TemplatePaths'];
 
             return [
-                new Twig_Loader_Filesystem( $templates_paths ),
-                new Twig_Loader_Array( [] )
+                new Twig_Loader_Filesystem( $templates_paths )
             ];
         };
 
