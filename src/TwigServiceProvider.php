@@ -16,14 +16,17 @@ class TwigServiceProvider implements ServiceProviderInterface
 {
 
     public $config = array(
-        // For Twig Loader
+        // For Twig Filesystem Loader
+        // See https://twig.symfony.com/doc/2.x/api.html#twig-loader-filesystem
         'templates' => 'templates',
 
         // Twig Options
+        // See https://twig.symfony.com/doc/2.x/api.html#environment-options
+        'debug' => false,
         'cache' => 'cache',
         'auto_reload' => true,
         'autoescape'  => false,
-        'debug' => false
+        'strict_variables' => false
     );
 
 
