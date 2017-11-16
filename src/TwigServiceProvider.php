@@ -16,19 +16,22 @@ class TwigServiceProvider implements ServiceProviderInterface
 {
 
     public $config = array(
-        // For Twig Loader
+        // For Twig Filesystem Loader
+        // See https://twig.symfony.com/doc/2.x/api.html#twig-loader-filesystem
         'templates' => 'templates',
 
         // Twig Options
+        // See https://twig.symfony.com/doc/2.x/api.html#environment-options
+        'debug' => false,
         'cache' => 'cache',
         'auto_reload' => true,
         'autoescape'  => false,
-        'debug' => false
+        'strict_variables' => false
     );
 
 
     /**
-     * @param array $config Configuration
+     * @param array $config Configuration array.
      */
     public function __construct( array $config = array())
     {
@@ -84,8 +87,7 @@ class TwigServiceProvider implements ServiceProviderInterface
             $templates_paths = $dic['Twig.TemplatePaths'];
 
             return [
-                new Twig_Loader_Filesystem( $templates_paths ),
-                new Twig_Loader_Array( [] )
+                new Twig_Loader_Filesystem( $templates_paths )
             ];
         };
 
@@ -100,10 +102,11 @@ class TwigServiceProvider implements ServiceProviderInterface
             $cache_path      = $dic['Twig.CachePath'];
 
             return [
-                'cache'       => $cache_path,
-                'auto_reload' => $template_config['auto_reload'],
-                'autoescape'  => $template_config['autoescape'],
-                'debug'       => $template_config['debug']
+                'cache'            => $cache_path,
+                'auto_reload'      => $template_config['auto_reload'],
+                'autoescape'       => $template_config['autoescape'],
+                'debug'            => $template_config['debug'],
+                'strict_variables' => $template_config['strict_variables']
             ];
         };
 
