@@ -38,7 +38,7 @@ Once you've registered the *TwigServiceProvider*, you can grab and use your **Tw
 ```php
 <?php
 $twig_environment = $pimple['Twig'];
-echo $twig_environment_>render('template', [ 'foo' => 'bar']);
+echo $twig_environment->render('template', [ 'foo' => 'bar']);
 ```
 
 …There are more services, see [Services section](#services)
@@ -52,13 +52,13 @@ echo $twig_environment_>render('template', [ 'foo' => 'bar']);
 $options = array(
 	// For Twig's Filesystem Loader (string or array)
 	'templates' => '/path/to/templates',
-	
+
 	// The most important Twig Environment options
-    'debug' => false,
-    'cache' => '/path/to/cache',
-    'auto_reload' => true,
-    'autoescape'  => false,
-    'strict_variables' => false	
+	'debug' => false,
+	'cache' => '/path/to/cache',
+	'auto_reload' => true,
+	'autoescape'  => false,
+	'strict_variables' => false	
 );
 ```
 
@@ -104,7 +104,7 @@ Per default, the ***Twig_Environment*** instance is built with the “most impor
 
 ```php
 // @return array
-$pimple->extend('Twig.Options', function($options, §pimple) {
+$pimple->extend('Twig.Options', function($options, $pimple) {
 	return array_merge($options, [
 		'charset' => 'iso-8859-1',
 		'optimizations' => 0
@@ -117,7 +117,7 @@ $pimple->extend('Twig.Options', function($options, §pimple) {
 
 ```php
 // @return string
-$pimple->extend('Twig.CachePath', function($old, §pimple) {
+$pimple->extend('Twig.CachePath', function($old, $pimple) {
 	return __DIR__ . '/var/cache';
 });
 ```
@@ -128,7 +128,7 @@ $pimple->extend('Twig.CachePath', function($old, §pimple) {
 
 ```php
 // @return array
-$pimple->extend('Twig.TemplatePaths', function($paths, §pimple) {
+$pimple->extend('Twig.TemplatePaths', function($paths, $pimple) {
 	return array_merge($paths, [
 		'another/one',
 		'vendor/name/package/templates'
@@ -145,7 +145,7 @@ To add one or more others, add them to the `$loaders` array:
 
 ```php
 // @return array
-$pimple->extend('Twig.Loaders', function($loaders, §pimple) {
+$pimple->extend('Twig.Loaders', function($loaders, $pimple) {
 	return array_merge($loaders, [
 			new Twig_Loader_Array( [ ... ] )
 	]);
