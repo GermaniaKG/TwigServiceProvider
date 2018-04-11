@@ -1,0 +1,1 @@
+# Mock temnplates dir
