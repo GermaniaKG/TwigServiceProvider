@@ -2,6 +2,11 @@
 
 **Pimple Service Provider for Twig templating engine**
 
+[![Build Status](https://travis-ci.org/GermaniaKG/TwigServiceProvider.svg?branch=master)](https://travis-ci.org/GermaniaKG/TwigServiceProvider)
+[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/build-status/master)
+
 
 ## Installation
 
