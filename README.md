@@ -2,13 +2,15 @@
 
 **Pimple Service Provider for Twig templating engine**
 
-[![Build Status](https://travis-ci.org/GermaniaKG/TwigServiceProvider.svg?branch=master)](https://travis-ci.org/GermaniaKG/TwigServiceProvider)
-[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/germania-kg/twigserviceprovider.svg?style=flat)](https://packagist.org/packages/germania-kg/twigserviceprovider)
+[![PHP version](https://img.shields.io/packagist/php-v/germania-kg/twigserviceprovider.svg)](https://packagist.org/packages/germania-kg/twigserviceprovider)
+[![Build Status](https://img.shields.io/travis/GermaniaKG/TwigServiceProvider.svg?label=Travis%20CI)](https://travis-ci.org/GermaniaKG/TwigServiceProvider)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/TwigServiceProvider/build-status/master)
 
 
-## Installation
+## Installation with Composer
 
 ```bash
 $ composer require germania-kg/twigserviceprovider
@@ -177,6 +179,7 @@ $pimple->extend( 'Twig.Extensions', ... );
 
 
 
+
 ## Development
 
 ```bash
@@ -185,12 +188,11 @@ $ cd TwigServiceProvider
 $ composer install
 ```
 
-
 ## Unit tests
 
-Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
-Run [PhpUnit](https://phpunit.de/) like this:
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. Run [PhpUnit](https://phpunit.de/) test or composer scripts like this:
 
 ```bash
-$ vendor/bin/phpunit
-```
+$ composer test
+# or
+$ vendor/bi
