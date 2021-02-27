@@ -1,37 +1,35 @@
 {
-	"name": "germania-kg/twigserviceprovider",
-	"description": "Pimple Service Provider for Twig templating engine",
-	"keywords": [ "Pimple", "Twig", "service provider", "serviceprovider", "depedency injection" ],
+    "name": "germania-kg/twigserviceprovider",
+    "description": "Pimple Service Provider for Twig templating engine",
+    "keywords": ["Pimple", "Twig", "service provider", "serviceprovider", "depedency injection"],
 
-	"license": "MIT",
+    "license": "MIT",
 
-	"authors": [
-		{
-			"name":  "Carsten Witt",
-			"email": "carstenwitt@germania-kg.de",
-			"role":  "Developer"
-		}
-	],
+    "authors": [{
+        "name": "Carsten Witt",
+        "email": "carstenwitt@germania-kg.de",
+        "role": "Developer"
+    }],
 
-	"autoload": {
-		"psr-4": {
-			"Germania\\TwigServiceProvider\\": "src"
-		}
-	},
+    "autoload": {
+        "psr-4": {
+            "Germania\\TwigServiceProvider\\": "src"
+        }
+    },
 
-	"autoload-dev": {
-			"psr-4": {
-				"tests\\": "tests/src"
-			}
-	},
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/src"
+        }
+    },
 
-	"require": {
-			"php": "^5.6|^7.0|^8.0",
-			"pimple/pimple": "^3.0",
-			"twig/twig": "^1.0|^2.0"
-	},
+    "require": {
+        "php": "^5.6|^7.0|^8.0",
+        "pimple/pimple": "^3.0",
+        "twig/twig": "^1.0|^2.0"
+    },
 
-	"require-dev": {
+    "require-dev": {
         "phpunit/phpunit": "^9.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "php-coveralls/php-coveralls": "^2.0",
@@ -41,13 +39,13 @@
     },
 
     "scripts": {
-        "phpunit":     "phpunit --coverage-text",
-        "phpstan":     "phpstan analyse src tests --level 2",
+        "phpunit": "phpunit --coverage-text",
+        "phpstan": "phpstan analyse src tests --level 2",
 
-        "phpcs":       "php-cs-fixer fix --verbose --diff --dry-run src/",
+        "phpcs": "php-cs-fixer fix --verbose --diff --dry-run src/",
         "phpcs-apply": "php-cs-fixer fix --verbose --diff src/",
 
-        "watch":       "phpunit-watcher watch",
+        "watch": "phpunit-watcher watch",
 
         "test": [
             "@phpcs",
