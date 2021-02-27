@@ -20,10 +20,11 @@ Alternatively, add this package directly to your *composer.json:*
 
 ```json
 "require": {
-    "germania-kg/twigserviceprovider": "^1.0"
+    "germania-kg/twigserviceprovider": "^1.0|^2.0"
 }
 ```
 
+**The v2 release requires PHP 7.3+ and Twig from v2 and up.**
 
 ## Setup
 
@@ -46,6 +47,12 @@ Once you've registered the *TwigServiceProvider*, you can grab and use your **Tw
 <?php
 $twig_environment = $pimple['Twig'];
 echo $twig_environment->render('template', [ 'foo' => 'bar']);
+```
+
+From v2 of this package, with Twig v2 and up, this is also possible:
+
+```php
+$twig_environment = $pimple[ \Twig\Environment::class ];
 ```
 
 …There are more services, see [Services section](#services)
@@ -196,3 +203,5 @@ Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leav
 $ composer test
 # or
 $ vendor/bi
+
+```

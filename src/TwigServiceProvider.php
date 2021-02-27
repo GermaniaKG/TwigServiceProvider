@@ -4,11 +4,9 @@ namespace Germania\TwigServiceProvider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-use \Twig_Loader_Filesystem;
-use \Twig_Loader_Array;
-use \Twig_Loader_Chain;
-use \Twig_Environment;
-use \Twig_Extension_Debug;
+use Twig\Loader\FilesystemLoader;
+use Twig\Loader\ChainLoader;
+use Twig\Environment as TwigEnvironment;
 
 
 
@@ -84,7 +82,7 @@ class TwigServiceProvider implements ServiceProviderInterface
             $templates_paths = $dic['Twig.TemplatePaths'];
 
             return [
-                new Twig_Loader_Filesystem( $templates_paths )
+                new FilesystemLoader( $templates_paths )
             ];
         };
 
@@ -143,9 +141,7 @@ class TwigServiceProvider implements ServiceProviderInterface
          * @return array
          */
         $dic['Twig.Extensions'] = function($dic) {
-            return [
-                new Twig_Extension_Debug
-            ];
+            return array();
         };
 
 
@@ -154,23 +150,31 @@ class TwigServiceProvider implements ServiceProviderInterface
 
 
         /**
-         * @return Twig_Loader_Chain
+         * @return ChainLoader
          */
         $dic['Twig.LoaderChain'] = function($dic) {
             $loaders = $dic['Twig.Loaders'];
-            return new Twig_Loader_Chain( $loaders );
+            return new ChainLoader( $loaders );
         };
 
 
         /**
-         * @return Twig_Environment
+         * @return \Twig\Environment
          */
         $dic['Twig'] = function( $dic ) {
+            return $dic[TwigEnvironment::class];
+        };
+
+
+        /**
+         * @return \Twig\Environment
+         */
+        $dic[TwigEnvironment::class] = function( $dic ) {
 
             // ---- 1. Instantiate Twig -----
             $twig_loader_chain = $dic['Twig.LoaderChain'];
             $twig_options      = $dic['Twig.Options'];
-            $twig = new Twig_Environment($twig_loader_chain, $twig_options);
+            $twig = new TwigEnvironment($twig_loader_chain, $twig_options);
 
 
             // ---- 2. Configure Extras -----
