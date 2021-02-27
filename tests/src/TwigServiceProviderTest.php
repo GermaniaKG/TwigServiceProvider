@@ -4,8 +4,8 @@ namespace tests;
 use Germania\TwigServiceProvider\TwigServiceProvider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use \Twig_Loader_Chain;
-use \Twig_Environment;
+use Twig\Loader\ChainLoader;
+use Twig\Environment as TwigEnvironment;
 
 class TwigServiceProviderTest extends \PHPUnit\Framework\TestCase
 {
@@ -102,8 +102,8 @@ class TwigServiceProviderTest extends \PHPUnit\Framework\TestCase
     public function provideTwigClasses() : array
     {
         return array(
-            [ 'Twig.LoaderChain',   Twig_Loader_Chain::class ],
-            [ 'Twig',               Twig_Environment::class ]
+            [ 'Twig.LoaderChain',   ChainLoader::class ],
+            [ 'Twig',               TwigEnvironment::class ]
         );
     }
     public function provideKeysAndTypes() : array
